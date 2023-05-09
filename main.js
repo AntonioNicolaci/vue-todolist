@@ -43,11 +43,15 @@ const toDoApp = Vue.createApp({
                     done: true,
                 }
             ],
+            newItem: '',
         }
     },
     methods: {
+        addItem(newElement) {
+            this.toDoItems.splice(0, 0, {"text" : newElement, "done" : false});
+        },
         removeItem(index) {
             this.toDoItems.splice(index, 1);
-        }
+        },
     }
 }).mount('#app')
