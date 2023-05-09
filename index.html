@@ -11,6 +11,10 @@
 <body>
     <h1><span>Vue</span> your Taske</h1>
     <div id="app">
+        <div id="divInput">
+            <input v-model="newItem">
+            <button @click="addItem(newItem)">Aggiungi</button>
+        </div>
         <template v-for="(todo, index) in toDoItems">
             <div :class="[todo.done == true ? 'doneTrue' : 'doneFalse']">
                 <div @click="removeItem(index)">
