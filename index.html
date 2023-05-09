@@ -11,8 +11,11 @@
 <body>
     <h1><span>Vue</span> your Taske</h1>
     <div id="app">
-        <template v-for="todo in toDoItems">
+        <template v-for="(todo, index) in toDoItems">
             <div :class="[todo.done == true ? 'doneTrue' : 'doneFalse']">
+                <div @click="removeItem(index)">
+                    <i class="bi bi-x-square"></i>
+                </div>
                 <div class="text">
                     {{todo.text}}
                 </div>
