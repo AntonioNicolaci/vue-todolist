@@ -55,7 +55,6 @@ const toDoApp = Vue.createApp({
             this.toDoItems.splice(index, 1);
         },
         changeDone(index) {
-            console.log("AAAAAA");
             if (this.toDoItems[index].done == true){
                 this.toDoItems[index].done = false;
             } else {
