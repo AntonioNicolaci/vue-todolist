@@ -22,7 +22,7 @@
                 <template v-for="(todo, index) in toDoItems">
                     <div :class="['card', index % 2 == 0 ? 'cardLeft' : 'cardRight' , todo.done == true ? 'doneTrue' : 'doneFalse']">
                             <i class="bi bi-x-square" @click="removeItem(index)"></i>
-                        <div class="text">
+                        <div class="text" @click="changeDone(index)">
                             {{todo.text}}
                         </div>
                             <i class="bi bi-check-square-fill" v-if="todo.done == true"></i>

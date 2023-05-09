@@ -54,5 +54,13 @@ const toDoApp = Vue.createApp({
         removeItem(index) {
             this.toDoItems.splice(index, 1);
         },
+        changeDone(index) {
+            console.log("AAAAAA");
+            if (this.toDoItems[index].done == true){
+                this.toDoItems[index].done = false;
+            } else {
+                this.toDoItems[index].done = true;
+            }
+        },
     }
 }).mount('#app')
