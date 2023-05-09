@@ -8,6 +8,6 @@ h1 span{
 .doneTrue .text{
     text-decoration-line: line-through;
 }
-.doneTrue .text, .doneFalse .text{
-    padding-right: 1em;
+.text{
+    padding-inline: 1em;
 }
