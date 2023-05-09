@@ -1,8 +1,44 @@
-h1 span{
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+    display: grid;
+    grid-template-columns: [line1] 15% [line2] 70% [line3] 15% [line4];
+    grid-template-rows: [line1] 5vh [line2] 10vh [line3] 85% [line4];
+    font-family: sans-serif;
+    color: #34495E;
+}
+#divH1{
+    grid-column-start: line1;
+    grid-column-end: line4;
+    grid-row-start: line2;
+    grid-row-end: line3;
+    justify-self: center;
+    border-bottom: 2px solid #34495E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+}
+#divH1 span{
     color: #41B883;
 }
+#app{
+    grid-column-start: line2;
+    grid-column-end: line3;
+    grid-row-start: line3;
+    grid-row-end: line4;
+    justify-self: center;
+    text-align: center;
+}
+#divTodo{
+    display: grid;
+    grid-template-columns: [line1] 48% [line2] 4% [line3] 48% [line4];
+}
 #divInput{
-    margin-bottom: 2em;
+    margin: 2em 0;
 }
 #divInput input{
     margin-right: 1em;
@@ -16,4 +52,23 @@ h1 span{
 }
 .text{
     padding-inline: 1em;
+}
+.card{
+    display: flex;
+    border: 1px solid #34495E;
+    padding: 2em 0;
+}
+.card .text{
+    flex-grow: 1;
+}
+.card .bi-x-square, .card .bi-check-square-fill, .card .bi-square-fill{
+    margin-inline: .5em;
+}
+.cardLeft{
+    grid-column-start: line1;
+    grid-column-end: line2;
+}
+.cardRight{
+    grid-column-start: line3;
+    grid-column-end: line4;
 }

@@ -8,30 +8,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="d-flex justify-content-center flex-column ">
-    <h1><span>Vue</span> your Taske</h1>
-    <div id="app">
-        <div id="divInput">
-            <input v-model="newItem" @keydown.enter="aggItem(newItem)">
-            <button @click="aggItem(newItem)">Aggiungi</button>
+<body>
+    <main>
+        <div id="divH1">
+            <h1><span>Vue</span> your Taske</h1>
         </div>
-        <template v-for="(todo, index) in toDoItems">
-            <div :class="[todo.done == true ? 'doneTrue' : 'doneFalse']">
-                <div @click="removeItem(index)">
-                    <i class="bi bi-x-square"></i>
-                </div>
-                <div class="text">
-                    {{todo.text}}
-                </div>
-                <div v-if="todo.done == true" >
-                    <i class="bi bi-check-square-fill"></i>
-                </div>
-                <div v-else>
-                    <i class="bi bi-square-fill"></i>
-                </div>
+        <div id="app">
+            <div id="divInput">
+                <input v-model="newItem" @keydown.enter="aggItem(newItem)">
+                <button @click="aggItem(newItem)">Aggiungi</button>
             </div>
-        </template>
-    </div>
+            <div id="divTodo">
+                <template v-for="(todo, index) in toDoItems">
+                    <div :class="['card', index % 2 == 0 ? 'cardLeft' : 'cardRight' , todo.done == true ? 'doneTrue' : 'doneFalse']">
+                            <i class="bi bi-x-square" @click="removeItem(index)"></i>
+                        <div class="text">
+                            {{todo.text}}
+                        </div>
+                            <i class="bi bi-check-square-fill" v-if="todo.done == true"></i>
+                            <i class="bi bi-square-fill" v-else></i>
+                    </div>
+                </template>
+            </div>
+            
+        </div>
+    </main>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="main.js"></script>
 </body>
