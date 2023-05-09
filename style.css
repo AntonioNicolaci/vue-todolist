@@ -1,6 +1,12 @@
 h1 span{
     color: #41B883;
 }
+#divInput{
+    margin-bottom: 2em;
+}
+#divInput input{
+    margin-right: 1em;
+}
 .doneTrue, .doneFalse{
     display: flex;
     margin-bottom: 20px;
