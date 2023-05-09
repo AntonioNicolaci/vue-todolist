@@ -47,8 +47,9 @@ const toDoApp = Vue.createApp({
         }
     },
     methods: {
-        addItem(newElement) {
+        aggItem(newElement) {
             this.toDoItems.splice(0, 0, {"text" : newElement, "done" : false});
+            this.newItem = "";
         },
         removeItem(index) {
             this.toDoItems.splice(index, 1);
