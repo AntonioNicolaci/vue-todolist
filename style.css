@@ -55,8 +55,18 @@ main{
 }
 .card{
     display: flex;
-    border: 1px solid #34495E;
+    border: 1px solid #41B883;
     padding: 2em 0;
+}
+.doneFalse{
+    border-top: 10px solid #41B883;
+}
+.doneTrue{
+    border-top: 10px solid #34495E;
+    color: #34495E;
+}
+.doneFalse .bi{
+    color: #41B883
 }
 .card .text{
     flex-grow: 1;
